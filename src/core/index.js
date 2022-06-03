@@ -143,6 +143,7 @@ export const createExecuteCommand = ({
         const componentLogger = createComponentLogger(componentName);
         return {
           config,
+          componentRegistry, // Added componentRegistry
           consent,
           eventManager,
           fireReferrerHideableImage,

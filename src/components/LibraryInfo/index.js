@@ -12,7 +12,7 @@ governing permissions and limitations under the License.
 
 import libraryVersion from "../../constants/libraryVersion";
 
-const createLibraryInfo = () => {
+const createLibraryInfo = (tools, componentRegistry) => {
   return {
     commands: {
       getLibraryInfo: {
@@ -20,7 +20,11 @@ const createLibraryInfo = () => {
           return {
             libraryInfo: {
               version: libraryVersion
-            }
+            },
+            // Config Info now displays through getLibraryInfo
+            configInfo: tools.config,
+            // Command Info now displayes through getLibraryInfo
+            commandInfo: componentRegistry.getCommandNames()
           };
         }
       }
